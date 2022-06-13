@@ -39,7 +39,7 @@ export const CardTitle = styled.h4`
 `;
 
 export const CardPrice = styled.span`
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-family: ${STYLES.font.fontSecondary};
 `;
 

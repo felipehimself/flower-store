@@ -1,20 +1,17 @@
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '../../store/store';
+import { ICart } from '../../interfaces/DataInterface';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { P, Section } from '../../components/shared/shared';
 import GoBack from '../../components/GoBack/GoBack';
 import * as Style from './styles';
 import PaymentIcon from '../../components/SVGs/PaymentIcon';
-
+import { groupItems } from '../../utils/functions';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
-
-/*
-
-  modal do continue e pay
-  mudar store para agrupar assim que incluído no cart?
-  adicionar media queries
-
-*/
-
+import { toggleCheckoutModal } from '../../slices/modalCheckoutSlice';
+import { clearCart } from '../../slices/cartSlice';
 
 type Inputs = {
   name: string;
@@ -46,9 +43,10 @@ const Checkout = () => {
     },
   });
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
-
+  const [checkoutItems, setCheckOutItems] = useState<ICart[] | null>(null);
   const { cartState } = useSelector((state: RootState) => state.cart);
+
+  const dispatch = useDispatch<AppDispatch>()
 
   const total = cartState.reduce((acc, curr) => acc + curr.price, 0);
   const shipping = (total * 0.3).toFixed(2);
@@ -56,6 +54,17 @@ const Checkout = () => {
   const grandTotal = (Number(total) + Number(shipping) + Number(vat)).toFixed(
     2
   );
+
+  useEffect(() => {
+    setCheckOutItems(groupItems(cartState));
+  }, [cartState]);
+
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    
+    dispatch(toggleCheckoutModal(true))
+    dispatch(clearCart(null))
+    
+  }
 
   return (
     <Section>
@@ -66,7 +75,7 @@ const Checkout = () => {
           <Style.FormControl className='form-control'>
             <Style.SubTitle>BILLING DETAILS</Style.SubTitle>
             <Style.FormFlex>
-              <Style.FormItem width='350px'>
+              <Style.FormItem width='100%'>
                 <Style.Label htmlFor='name'>Name</Style.Label>
                 <Style.Input
                   {...register('name', { required: true })}
@@ -76,7 +85,7 @@ const Checkout = () => {
                 />
                 <Style.Error>{errors.name && 'Required'}</Style.Error>
               </Style.FormItem>
-              <Style.FormItem width='350px'>
+              <Style.FormItem width='100%'>
                 <Style.Label htmlFor='email'>E-mail Address</Style.Label>
                 <Style.Input
                   {...register('email', { required: true })}
@@ -106,7 +115,7 @@ const Checkout = () => {
             </Style.FormFlex>
 
             <Style.FormFlex>
-              <Style.FormItem width='350px'>
+              <Style.FormItem width='100%'>
                 <Style.Label htmlFor='city'>City</Style.Label>
                 <Style.Input
                   {...register('city', { required: true })}
@@ -116,7 +125,7 @@ const Checkout = () => {
                 />
                 <Style.Error>{errors.city && 'Required'}</Style.Error>
               </Style.FormItem>
-              <Style.FormItem width='350px'>
+              <Style.FormItem width='100%'>
                 <Style.Label htmlFor='country'>Country</Style.Label>
                 <Style.Input
                   {...register('country', { required: true })}
@@ -134,7 +143,7 @@ const Checkout = () => {
             <Style.SubLabel>Payment Method</Style.SubLabel>
 
             <Style.FormFlex>
-              <Style.FormItem width='350px'>
+              <Style.FormItem width='100%'>
                 <Style.InputRadioContainer
                   className={errors.paymentType ? 'error' : undefined}
                 >
@@ -146,7 +155,7 @@ const Checkout = () => {
                   <Style.Span>e-Money</Style.Span>
                 </Style.InputRadioContainer>
               </Style.FormItem>
-              <Style.FormItem width='350px'>
+              <Style.FormItem width='100%'>
                 <Style.InputRadioContainer
                   className={errors.paymentType ? 'error' : undefined}
                 >
@@ -163,7 +172,7 @@ const Checkout = () => {
             <Style.FormFooter>
               {watch('paymentType') !== 'cash' && (
                 <Style.FormFlex>
-                  <Style.FormItem width='350px'>
+                  <Style.FormItem width='100%'>
                     <Style.Label htmlFor='number'>e-Money Number</Style.Label>
                     <Style.Input
                       min={0}
@@ -176,7 +185,7 @@ const Checkout = () => {
                       {errors.eMoneyNumber && 'Required'}
                     </Style.Error>
                   </Style.FormItem>
-                  <Style.FormItem width='350px'>
+                  <Style.FormItem width='100%'>
                     <Style.Label htmlFor='pin'>e-Money Pin</Style.Label>
                     <Style.Input
                       min={0}
@@ -207,13 +216,16 @@ const Checkout = () => {
         <Style.Summary>
           <Style.Title>SUMMARY</Style.Title>
 
-          {cartState.map((cartItem) => {
+          {checkoutItems?.map((cartItem) => {
             return (
               <Style.SummaryItem key={cartItem.id}>
                 <Style.SummaryImage src={cartItem.img} />
                 <Style.SummaryItemDetails>
                   <Style.ProductName>{cartItem.name} </Style.ProductName>
-                  <Style.ProductPrice>$ {cartItem.price}</Style.ProductPrice>
+                  <Style.ProductPriceContainer>
+                    <Style.ProductPrice>$ {cartItem.price}</Style.ProductPrice>
+                    <Style.ProductPrice>x {cartItem.total}</Style.ProductPrice>
+                  </Style.ProductPriceContainer>
                 </Style.SummaryItemDetails>
               </Style.SummaryItem>
             );

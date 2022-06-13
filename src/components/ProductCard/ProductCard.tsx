@@ -19,7 +19,7 @@ const ProductCard: React.FC<IData> = ({
       <Style.CardFooter>
         <Style.CardTextContainer>
           <Style.CardTitle>{name}</Style.CardTitle>
-          <Style.CardPrice>${price}</Style.CardPrice>
+          <Style.CardPrice>$ {price}</Style.CardPrice>
         </Style.CardTextContainer>
         <Style.AddCartBtn to={`/product/${id}`}>Shop</Style.AddCartBtn>
       </Style.CardFooter>

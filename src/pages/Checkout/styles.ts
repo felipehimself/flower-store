@@ -1,11 +1,21 @@
 import styled from 'styled-components';
 import { STYLES } from '../../constants/styles';
 
+export const Form = styled.form`
+  display: flex;
+  align-items: flex-start;
+  padding: 2rem 0;
+  gap: 4rem;
+
+  @media screen and (max-width: 1040px) {
+    flex-direction: column;
+  }
+`;
 export const CheckoutInfo = styled.div`
-  flex: 1;
   border: 1px solid rgba(0, 0, 0, 0.2);
   padding: 3rem 3rem;
   border-radius: 0.5rem;
+  width: 100%;
 `;
 
 export const Title = styled.h2`
@@ -18,13 +28,6 @@ export const SubTitle = styled.h3`
   font-size: 1.5rem;
 `;
 
-export const Form = styled.form`
-  display: flex;
-  align-items: flex-start;
-  padding: 2rem 0;
-  gap: 4rem;
-`;
-
 export const FormControl = styled.div`
   margin-top: 2rem;
 `;
@@ -32,6 +35,10 @@ export const FormControl = styled.div`
 export const FormFlex = styled.div`
   display: flex;
   gap: 1rem;
+  
+  @media screen and (max-width: 1040px) {
+    flex-direction: column;
+  }
 `;
 
 export const FormItem = styled.div<{ width: string }>`
@@ -99,15 +106,19 @@ export const Error = styled.span`
 `;
 
 export const FormFooter = styled.div`
-  min-height: 9.5rem;
+  min-height: 10rem;
   margin-top: 2rem;
 `;
 
 export const Summary = styled.div`
-  flex: 0.8;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 3rem 3rem;
-  border-radius: 5px;
+  padding: 3rem;
+  border-radius: 0.5rem;
+  width: 60%;
+
+  @media screen and (max-width: 1040px) {
+    width: 100%;
+  }
 `;
 
 export const SummaryItem = styled.div`
@@ -131,6 +142,11 @@ export const ProductName = styled.h3`
   font-size: 1.6rem;
 `;
 
+export const ProductPriceContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
 export const ProductPrice = styled.span`
   font-size: 1.4rem;
 `;

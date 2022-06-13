@@ -8,7 +8,7 @@ export const Navbar = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 1rem;
+  padding: 2rem 2rem;
 `;
 
 export const Logo = styled.h3`
@@ -20,10 +20,10 @@ export const Logo = styled.h3`
   &::after {
     content: '';
     position: absolute;
-    bottom: 13px;
-    right: -10px;
-    width: 5px;
-    height: 5px;
+    bottom: 1.3rem;
+    right: -1rem;
+    width: 0.5rem;
+    height: 0.5rem;
     background-color: ${STYLES.colors.colorPrimary};
   }
 `;
@@ -44,7 +44,7 @@ export const Navlink = styled(Link)`
     content: '';
     position: absolute;
     width: 0;
-    height: 3px;
+    height: 2px;
     background-color: ${STYLES.colors.colorPrimary};
     left: 0;
     bottom: -2px;
@@ -66,7 +66,7 @@ export const A = styled.a`
     content: '';
     position: absolute;
     width: 0;
-    height: 3px;
+    height: 2px;
     background-color: ${STYLES.colors.colorPrimary};
     left: 0;
     bottom: -2px;
@@ -91,8 +91,8 @@ export const CartNumber = styled.span`
   justify-content: center;
   content: '';
   position: absolute;
-  top: -8px;
-  right: -6px;
+  top: -0.8rem;
+  right: -0.6rem;
   border-radius: 100%;
   min-width: 1.6rem;
   min-height: 1.6rem;

@@ -4,7 +4,7 @@ import { STYLES } from '../../constants/styles';
 export const Section = styled.section`
   max-width: 120rem;
   margin: 0 auto;
-  padding: 4rem 1rem;
+  padding: 4rem 2rem;
   padding-bottom: 6rem;
 `;
 
@@ -31,13 +31,13 @@ export const NavBtn = styled.a`
   transition: opacity 0.3s ease;
 
   :hover {
-    opacity: 0.8;
+    opacity: 0.9;
   }
 `;
 
 export const CardsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(26rem, 1fr));
 
   gap: 2rem;
   margin-top: 3rem;
@@ -52,10 +52,10 @@ export const Logo = styled.span<{ color?: string }>`
   &::after {
     content: '';
     position: absolute;
-    bottom: 13px;
-    right: -10px;
-    width: 5px;
-    height: 5px;
+    bottom: 1.3rem;
+    right: -1rem;
+    width: 0.5rem;
+    height: 0.5rem;
     background-color: ${STYLES.colors.colorPrimary};
   }
 `;

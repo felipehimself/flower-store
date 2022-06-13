@@ -15,6 +15,18 @@ html {
   scroll-behavior: smooth;
 }
 
+@media screen and (max-width:760px) {
+  html {
+    font-size: 58.5%;
+  }
+}
+
+@media screen and (max-width:420px) {
+  html {
+    font-size: 52.5%;
+  }
+}
+
 body {
   font-family: ${STYLES.font.fontSecondary};
   color: ${STYLES.colors.colorGray};

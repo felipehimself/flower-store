@@ -7,7 +7,6 @@ import IData from '../../interfaces/DataInterface';
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart } from '../../slices/cartSlice';
 import GoBack from '../../components/GoBack/GoBack';
-import BestSeller from '../../components/BestSeller/BestSeller';
 
 const Product = () => {
   const [product, setProduct] = useState<IData | null>();
@@ -23,9 +22,11 @@ const Product = () => {
 
   return (
     <Section>
-      <GoBack/>
+      <GoBack />
       <Style.ProductContainer>
-        <Style.ProductImg src={product?.img} />
+        <Style.ProductImgContainer>
+          <Style.ProductImg src={product?.img} />
+        </Style.ProductImgContainer>
         <Style.TextContainer>
           <Style.ProductTitle>{product?.name}</Style.ProductTitle>
           <P>{product?.desc}</P>

@@ -17,8 +17,8 @@ export const ModalContent = styled.article`
   position: absolute;
   top: 8rem;
   right: 8rem;
-  padding: 2rem 2rem;
-  max-width: 34rem;
+  padding: 2rem;
+  max-width: 36rem;
   width: 100%;
   border-radius: 0.6rem;
 `;
@@ -70,11 +70,17 @@ export const CartImg = styled.img`
 export const CartDetailsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.6rem;
 `;
 
 export const CartItemName = styled.h3`
   font-size: 1.3rem;
+`;
+
+export const CartPriceContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const CartItemPrice = styled.span`
@@ -103,13 +109,21 @@ export const BtnCheckout = styled.button`
   background-color: ${STYLES.colors.colorPrimary};
   border: none;
   width: 100%;
-  padding: 1rem;
+  padding: 1.4rem;
   color: ${STYLES.colors.colorWhite};
   font-weight: 700;
   cursor: pointer;
   transition: opacity 0.3s ease;
+  border-radius: 0.5rem;
 
   :hover {
-    opacity: 0.8;
+    opacity: 0.9;
   }
 `;
+
+export const CartEmpty = styled.h4`
+  font-size: 2rem;
+  text-align: center;
+  padding: 2rem 0;
+
+`

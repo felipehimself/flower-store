@@ -7,7 +7,11 @@ interface IData {
   img: string;
   included: string[];
   isBestSeller: boolean;
-  desc:string
+  desc: string;
+}
+
+export interface ICart extends IData {
+  total: number;
 }
 
 export default IData;

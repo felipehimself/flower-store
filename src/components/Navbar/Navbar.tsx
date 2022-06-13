@@ -3,7 +3,7 @@ import * as Style from './styles';
 import { Logo } from '../shared/shared';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState, AppDispatch } from '../../store/store';
-import { toggleModal } from '../../slices/modalSlice';
+import { toggleModal } from '../../slices/modalCartSlice';
 import { useLocation } from 'react-router-dom';
 
 const Navbar = () => {

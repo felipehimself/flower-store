@@ -17,22 +17,33 @@ export const NavLink = styled(Link)`
 export const ProductContainer = styled.article`
   margin-top: 3rem;
   display: flex;
-  gap: 10rem;
-  align-items: center;
+  gap: 4rem;
+  align-items: flex-start;
   margin-bottom: 6rem;
+
+  @media screen and (max-width: 1050px) {
+      flex-direction: column-reverse;
+  }
   
 `;
 
+export const ProductImgContainer = styled.div`
+  width: 100%;
+
+`
 export const ProductImg = styled.img`
-  
+  display: block;
+  width: 100%;
 `;
 
 export const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  padding: 0 3rem;
+  /* padding: 0 3rem; */
   align-items: flex-start;
+  
+  
 `;
 
 export const ProductTitle = styled.h2`
@@ -86,6 +97,6 @@ export const Button = styled.button`
   transition: opacity 0.3s ease;
 
   :hover {
-    opacity: 0.8;
+    opacity: 0.9;
   }
 `;
