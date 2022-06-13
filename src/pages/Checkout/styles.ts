@@ -136,6 +136,7 @@ export const SummaryItemDetails = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  flex: 1;
 `;
 
 export const ProductName = styled.h3`
@@ -146,6 +147,7 @@ export const ProductPriceContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
 `;
 export const ProductPrice = styled.span`
   font-size: 1.4rem;
