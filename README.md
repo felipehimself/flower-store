@@ -200,14 +200,14 @@ Para gerenciar as informações do formulário foi utilizado:
 <img src='./screenshots/img-2.jpeg' alt='project screen shot' width="500" /> 
 <img src='./screenshots/img-3.jpeg' alt='project screen shot' width="500" /> 
 <img src='./screenshots/img-4.jpeg' alt='project screen shot' width="500" /> 
-<img src='./screenshots/img-5.jpg' alt='project screen shot' width="500" /> 
+<img src='./screenshots/img-5.jpeg' alt='project screen shot' width="500" /> 
 
 
 
 ### Mobile
 
-<img src='./screenshots/img-6.jpg' alt='project screen shot' width="500" /> 
-<img src='./screenshots/img-7.jpg' alt='project screen shot' width="500" /> 
-<img src='./screenshots/img-8.jpg' alt='project screen shot' width="500" /> 
-<img src='./screenshots/img-9.jpg' alt='project screen shot' width="500" /> 
+<img src='./screenshots/img-6.jpeg' alt='project screen shot' width="500" /> 
+<img src='./screenshots/img-7.jpeg' alt='project screen shot' width="500" /> 
+<img src='./screenshots/img-8.jpeg' alt='project screen shot' width="500" /> 
+<img src='./screenshots/img-9.jpeg' alt='project screen shot' width="500" /> 
 
