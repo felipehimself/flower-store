@@ -206,8 +206,8 @@ Para gerenciar as informações do formulário foi utilizado:
 
 ### Mobile
 
-<img src='./screenshots/img-6.jpeg' alt='project screen shot' width="500" /> 
-<img src='./screenshots/img-7.jpeg' alt='project screen shot' width="500" /> 
-<img src='./screenshots/img-8.jpeg' alt='project screen shot' width="500" /> 
-<img src='./screenshots/img-9.jpeg' alt='project screen shot' width="500" /> 
+<img src='./screenshots/img-6.jpeg' alt='project screen shot' width="340" /> 
+<img src='./screenshots/img-7.jpeg' alt='project screen shot' width="340" /> 
+<img src='./screenshots/img-8.jpeg' alt='project screen shot' width="340" /> 
+<img src='./screenshots/img-9.jpeg' alt='project screen shot' width="340" /> 
 
