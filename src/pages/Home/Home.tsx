@@ -31,7 +31,7 @@ const Home = () => {
           <Style.Img src={heroImg} />
         </Style.ImgContainer>
       </Style.Hero>
-      <Section id='products'>
+      <Section>
         <H2>Our Best Sellers This Month</H2>
         <CardsContainer>
           {data

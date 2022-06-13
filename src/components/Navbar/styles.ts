@@ -56,12 +56,33 @@ export const Navlink = styled(Link)`
   }
 `;
 
+export const A = styled.a`
+  text-decoration: none;
+  position: relative;
+  font-size: 1.6rem;
+  color: ${STYLES.colors.colorGray};
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: ${STYLES.colors.colorPrimary};
+    left: 0;
+    bottom: -2px;
+    transition: all 0.3s ease;
+  }
+
+  &:hover::before {
+    width: 100%;
+  }
+`;
+
 export const CartContainer = styled.button`
   cursor: pointer;
   background-color: transparent;
   border: none;
   position: relative;
-
 `;
 
 export const CartNumber = styled.span`
@@ -78,5 +99,4 @@ export const CartNumber = styled.span`
   background-color: ${STYLES.colors.colorPrimary};
   font-size: 1rem;
   color: ${STYLES.colors.colorWhite};
-  
 `;

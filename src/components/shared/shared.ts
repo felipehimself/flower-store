@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import { STYLES } from '../../constants/styles';
-import { Link } from 'react-router-dom';
 
 export const Section = styled.section`
   max-width: 120rem;
   margin: 0 auto;
   padding: 4rem 1rem;
+  padding-bottom: 6rem;
 `;
 
 export const H1 = styled.h1`

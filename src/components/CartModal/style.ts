@@ -29,6 +29,19 @@ export const ModalHeader = styled.header`
   justify-content: space-between;
 `;
 
+export const BtnClose = styled.button`
+  border: none;
+  background-color: ${STYLES.colors.colorBlack};
+  color: ${STYLES.colors.colorWhite};
+  padding: 0.3rem 0.8rem;
+  border-radius: 100%;
+  font-size: 1.6rem;
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  cursor: pointer;
+`;
+
 export const CartTitle = styled.h2`
   font-size: 1.6rem;
   text-align: left;
@@ -86,7 +99,7 @@ export const TotalAmount = styled.span`
   font-size: 1.6rem;
 `;
 
-export const CheckoutButton = styled.button`
+export const BtnCheckout = styled.button`
   background-color: ${STYLES.colors.colorPrimary};
   border: none;
   width: 100%;
@@ -94,5 +107,9 @@ export const CheckoutButton = styled.button`
   color: ${STYLES.colors.colorWhite};
   font-weight: 700;
   cursor: pointer;
+  transition: opacity 0.3s ease;
 
-`
+  :hover {
+    opacity: 0.8;
+  }
+`;

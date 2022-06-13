@@ -7,16 +7,6 @@ import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../store/store';
 import { clearCart } from '../../slices/cartSlice';
 
-
-/* 
-
-- criar botao fechar modal
-- colocar best seller na img na rota produto (component?)
-- goback é component
-
-
-*/
-
 const CartModal = () => {
   const { cartState } = useSelector((state: RootState) => state.cart);
 
@@ -36,6 +26,7 @@ const CartModal = () => {
   return (
     <Style.OverLay>
       <Style.ModalContent>
+        <Style.BtnClose onClick={()=>dispatch(toggleModal(false))}>&times;</Style.BtnClose>
         <Style.ModalHeader>
           <Style.CartTitle>CART ({cartState.length})</Style.CartTitle>
           <Style.RemoveBtn onClick={handleClearCart}>
@@ -60,9 +51,9 @@ const CartModal = () => {
             $ {cartState.reduce((acc, curr) => acc + curr.price, 0)}
           </Style.TotalAmount>
         </Style.TotalContainer>
-        <Style.CheckoutButton onClick={handleCheckout}>
+        <Style.BtnCheckout onClick={handleCheckout}>
           CHECKOUT
-        </Style.CheckoutButton>
+        </Style.BtnCheckout>
       </Style.ModalContent>
     </Style.OverLay>
   );

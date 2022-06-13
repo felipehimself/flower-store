@@ -20,9 +20,12 @@ export const ProductContainer = styled.article`
   gap: 10rem;
   align-items: center;
   margin-bottom: 6rem;
+  
 `;
 
-export const ProductImg = styled.img``;
+export const ProductImg = styled.img`
+  
+`;
 
 export const TextContainer = styled.div`
   display: flex;
@@ -37,8 +40,7 @@ export const ProductTitle = styled.h2`
   color: ${STYLES.colors.colorGray};
 `;
 
-export const ProuctSubTitleContainer = styled.div``
-
+export const ProuctSubTitleContainer = styled.div``;
 
 export const ProductSubTitle = styled.h4`
   font-size: 2rem;

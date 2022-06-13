@@ -62,7 +62,7 @@ export const AddCartBtn = styled(Link)`
   text-decoration: none;
   font-size: 1.4rem;
   color: ${STYLES.colors.colorGray};
-  border-bottom: 1px solid ${STYLES.colors.colorPrimary};
+  border-bottom: 1px dotted ${STYLES.colors.colorPrimary};
   transition: all 0.3s ease;
 
   :hover {
