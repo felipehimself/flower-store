@@ -15,7 +15,6 @@ import CheckoutModal from './components/CheckoutModal/CheckoutModal';
 
 import { useSelector } from 'react-redux';
 import { RootState } from './store/store';
-import { toggleCheckoutModal } from './slices/modalCheckoutSlice';
 
 const App = () => {
   const { modalCheckoutState } = useSelector((state: RootState) => state.modalCheckout);

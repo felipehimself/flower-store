@@ -22,18 +22,28 @@ export const ProductContainer = styled.article`
   margin-bottom: 6rem;
 
   @media screen and (max-width: 1050px) {
-      flex-direction: column-reverse;
+    flex-direction: column-reverse;
   }
-  
 `;
 
 export const ProductImgContainer = styled.div`
   width: 100%;
+  position: relative;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 
-`
+`;
+
 export const ProductImg = styled.img`
   display: block;
   width: 100%;
+  transition: transform 0.3s ease;
+
+  :hover {
+    transform: scale(1.02)
+  }
+
+
 `;
 
 export const TextContainer = styled.div`
@@ -42,8 +52,6 @@ export const TextContainer = styled.div`
   gap: 3rem;
   /* padding: 0 3rem; */
   align-items: flex-start;
-  
-  
 `;
 
 export const ProductTitle = styled.h2`

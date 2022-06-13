@@ -1,5 +1,7 @@
 import * as Style from './styles';
 import IData from '../../interfaces/DataInterface';
+import Badge from '../Badge/Badge';
+import StarIcon from '../SVGs/StarIcon';
 
 const ProductCard: React.FC<IData> = ({
   id,
@@ -13,17 +15,17 @@ const ProductCard: React.FC<IData> = ({
 }) => {
   return (
     <Style.Card>
+      {isBestSeller && <Badge />}
       <Style.ImgContainer>
         <Style.CardImg src={img} />
       </Style.ImgContainer>
       <Style.CardFooter>
-        <Style.CardTextContainer>
+        <Style.CardFlex>
           <Style.CardTitle>{name}</Style.CardTitle>
-          <Style.CardPrice>$ {price}</Style.CardPrice>
-        </Style.CardTextContainer>
-        <Style.AddCartBtn to={`/product/${id}`}>Shop</Style.AddCartBtn>
+          <Style.AddCartBtn to={`/product/${id}`}>Shop</Style.AddCartBtn>
+        </Style.CardFlex>
+        <Style.CardPrice>$ {price}</Style.CardPrice>
       </Style.CardFooter>
-      {isBestSeller && <Style.Badge>Best Seller</Style.Badge>}
     </Style.Card>
   );
 };

@@ -7,6 +7,8 @@ import IData from '../../interfaces/DataInterface';
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart } from '../../slices/cartSlice';
 import GoBack from '../../components/GoBack/GoBack';
+import Badge from '../../components/Badge/Badge';
+
 
 const Product = () => {
   const [product, setProduct] = useState<IData | null>();
@@ -25,6 +27,7 @@ const Product = () => {
       <GoBack />
       <Style.ProductContainer>
         <Style.ProductImgContainer>
+          {product?.isBestSeller && <Badge />}
           <Style.ProductImg src={product?.img} />
         </Style.ProductImgContainer>
         <Style.TextContainer>

@@ -12,11 +12,20 @@ export const OverLay = styled.div`
   z-index: 100;
 `;
 
+export const ModalContainer = styled.div`
+  max-width: 120rem;
+  padding: 0 2rem;
+  margin: 0 auto;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+`;
+
 export const ModalContent = styled.article`
   background-color: ${STYLES.colors.colorWhite};
   position: absolute;
   top: 8rem;
-  right: 8rem;
+  right: 2rem;
   padding: 2rem;
   max-width: 36rem;
   width: 100%;
@@ -125,5 +134,4 @@ export const CartEmpty = styled.h4`
   font-size: 2rem;
   text-align: center;
   padding: 2rem 0;
-
-`
+`;

@@ -33,51 +33,52 @@ const CartModal = () => {
 
   return (
     <Style.OverLay>
-      <Style.ModalContent>
-        <Style.BtnClose onClick={() => dispatch(toggleModal(false))}>
-          &times;
-        </Style.BtnClose>
-        {cartState.length === 0 ? (
-          <Style.CartEmpty>Your cart is empty</Style.CartEmpty>
-        ) : (
-          <>
-            <Style.ModalHeader>
-              <Style.CartTitle>CART ({cartState.length})</Style.CartTitle>
-              <Style.RemoveBtn onClick={handleClearCart}>
-                remove all
-              </Style.RemoveBtn>
-            </Style.ModalHeader>
-
-            {groupedItems?.map((cartItem) => {
-              return (
-                <Style.CartItemContainer key={cartItem.id}>
-                  <Style.CartImg src={cartItem.img} />
-                  <Style.CartDetailsContainer>
-                    <Style.CartItemName>{cartItem.name}</Style.CartItemName>
-                    <Style.CartPriceContainer>
-                      <Style.CartItemPrice>
-                        $ {cartItem.price}
-                      </Style.CartItemPrice>
-                      <Style.CartItemPrice>
-                        x {cartItem.total}
-                      </Style.CartItemPrice>
-                    </Style.CartPriceContainer>
-                  </Style.CartDetailsContainer>
-                </Style.CartItemContainer>
-              );
-            })}
-            <Style.TotalContainer>
-              <Style.Total>TOTAL</Style.Total>
-              <Style.TotalAmount>
-                $ {cartState.reduce((acc, curr) => acc + curr.price, 0)}
-              </Style.TotalAmount>
-            </Style.TotalContainer>
-            <Style.BtnCheckout onClick={handleCheckout}>
-              CHECKOUT
-            </Style.BtnCheckout>
-          </>
-        )}
-      </Style.ModalContent>
+      <Style.ModalContainer>
+        <Style.ModalContent>
+          <Style.BtnClose onClick={() => dispatch(toggleModal(false))}>
+            &times;
+          </Style.BtnClose>
+          {cartState.length === 0 ? (
+            <Style.CartEmpty>Your cart is empty</Style.CartEmpty>
+          ) : (
+            <>
+              <Style.ModalHeader>
+                <Style.CartTitle>CART ({cartState.length})</Style.CartTitle>
+                <Style.RemoveBtn onClick={handleClearCart}>
+                  remove all
+                </Style.RemoveBtn>
+              </Style.ModalHeader>
+              {groupedItems?.map((cartItem) => {
+                return (
+                  <Style.CartItemContainer key={cartItem.id}>
+                    <Style.CartImg src={cartItem.img} />
+                    <Style.CartDetailsContainer>
+                      <Style.CartItemName>{cartItem.name}</Style.CartItemName>
+                      <Style.CartPriceContainer>
+                        <Style.CartItemPrice>
+                          $ {cartItem.price}
+                        </Style.CartItemPrice>
+                        <Style.CartItemPrice>
+                          x {cartItem.total}
+                        </Style.CartItemPrice>
+                      </Style.CartPriceContainer>
+                    </Style.CartDetailsContainer>
+                  </Style.CartItemContainer>
+                );
+              })}
+              <Style.TotalContainer>
+                <Style.Total>TOTAL</Style.Total>
+                <Style.TotalAmount>
+                  $ {cartState.reduce((acc, curr) => acc + curr.price, 0)}
+                </Style.TotalAmount>
+              </Style.TotalContainer>
+              <Style.BtnCheckout onClick={handleCheckout}>
+                CHECKOUT
+              </Style.BtnCheckout>
+            </>
+          )}
+        </Style.ModalContent>
+      </Style.ModalContainer>
     </Style.OverLay>
   );
 };

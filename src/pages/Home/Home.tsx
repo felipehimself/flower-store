@@ -23,7 +23,7 @@ const Home = () => {
             Beautiful Flowers <br />
             For Your Loved Ones
           </H1>
-          <NavBtn color={STYLES.colors.colorWhite} href='#products'>
+          <NavBtn color={STYLES.colors.colorWhite} href='#bestSellers'>
             Best Sellers
           </NavBtn>
         </Style.HeroTextContainer>
@@ -31,7 +31,7 @@ const Home = () => {
           <Style.Img src={heroImg} />
         </Style.ImgContainer>
       </Style.Hero>
-      <Section>
+      <Section id='bestSellers'>
         <H2>Our Best Sellers This Month</H2>
         <CardsContainer>
           {data

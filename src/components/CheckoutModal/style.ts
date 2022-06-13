@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { STYLES } from '../../constants/styles';
-import { Link } from 'react-router-dom';
 export const OverLay = styled.div`
   position: fixed;
   inset: 0;
@@ -15,7 +14,7 @@ export const OverLay = styled.div`
 export const ModalContent = styled.article`
   background-color: ${STYLES.colors.colorWhite};
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 3rem;

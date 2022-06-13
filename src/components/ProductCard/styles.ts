@@ -10,7 +10,7 @@ export const Card = styled.div`
 
 export const ImgContainer = styled.div`
   overflow: hidden;
-  /* box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4); */
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.05);
 `;
 
 export const CardImg = styled.img`
@@ -25,9 +25,14 @@ export const CardImg = styled.img`
 
 export const CardFooter = styled.footer`
   display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1rem;
+`;
+
+export const CardFlex = styled.div`
+  display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  margin-top: 1.4rem;
 `;
 
 export const CardTextContainer = styled.div``;
@@ -43,17 +48,6 @@ export const CardPrice = styled.span`
   font-family: ${STYLES.font.fontSecondary};
 `;
 
-export const Badge = styled.span`
-  font-size: 1.2rem;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background-color: ${STYLES.colors.colorWhite};
-  padding: 0.5rem 1rem;
-  font-weight: 500;
-  color: ${STYLES.colors.colorPrimary};
-`;
-
 export const AddCartBtn = styled(Link)`
   background-color: transparent;
   border: none;
@@ -63,7 +57,7 @@ export const AddCartBtn = styled(Link)`
   font-size: 1.4rem;
   color: ${STYLES.colors.colorGray};
   border-bottom: 1px dotted ${STYLES.colors.colorPrimary};
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
 
   :hover {
     transform: translateY(-4px);
